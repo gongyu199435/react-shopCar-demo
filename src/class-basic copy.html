@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            name = "奥特曼";
+            age = 18
+            static habite = '昆仑山'
+            // 实例方法
+            sleep() {
+                console.log(this.name + '要睡觉了')
+            }
+            static eat(name) {
+                console.log(this.name)
+                console.log(this.name + `${name}肚子饿了要吃东西呢`)
+            }
+        }
+        class Pig extends Animal {
+            constructor(name, age) {
+                super(name, age)
+            }
+            play(name) {
+                console.log(`${this.name}要出去玩了`)
+                console.log(`${name}要出去玩了`)
+            }
+        }
+        var peiqi = new Pig('狗子')
+        peiqi.play('佩奇')
+        var a1 = new Animal('二狗子', 5)
+        // a1.sleep()
+        Animal.eat("小怪兽")
+    </script>
+</body>
+
+</html>

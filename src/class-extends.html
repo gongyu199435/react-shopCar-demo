@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            name = ''
+            age = 0
+
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+
+            eat(food) {
+                console.log(`${this.name} --- ${this.age} 岁了，吃${food}`)
+            }
+        }
+
+        class Dog extends Animal {
+            // 如果一个类继承了某个父类，并且重写了构造器，这个时候，在子类的构造器中就必须第一句调用super
+            constructor(name, age, rich) {
+                // 调用父类的构造器，给name和age两个实例属性赋值
+                super(name, age)
+
+                this.rich = rich
+            }
+
+            eat(food) {
+                console.log(`冈瑟四世这个有钱的狗吃 ${food}`)
+            }
+        }
+
+        var dog1 = new Dog('冈瑟四世', 5, true)
+        // console.log(dog1)
+        // dog1.eat('牛排')
+
+        dog1.eat('骨头')
+    </script>
+</body>
+
+</html>

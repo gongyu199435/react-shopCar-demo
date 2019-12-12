@@ -1,0 +1,15 @@
+.head{
+    width: 100%;
+    height: 300px;
+    background-color: pink;
+}
+.uls{
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+.goods{
+    text-decoration: none;
+    /* float: left;
+    margin-right: 30px; */
+}

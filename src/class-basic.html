@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            // 构造器就是给我们的实例属性在创建的时候，赋值
+            constructor(name,age){
+                // console.log('constructor---',name,age)
+
+                // 把形参赋值给我们的实例属性，只能访问实例属性
+                this.name = name
+                this.age = age
+            }
+
+            // 定义两个实例属性，并且给他们赋初始值
+            name = ''
+            age = 0
+
+            // 定义一个静态属性
+            static habitat = '地球'
+
+            // 实例方法，调用的时候，必须用对象，内部只能访问实例属性
+            eat(food){
+                console.log(`${this.name} --- ${this.age} 吃 ${food}`)
+            }
+
+            // 静态方法，调用的时候，只能通过类名，内部只能访问静态属性
+            static sleep(){
+                // console.log(`所有的动物都栖息在 ${Animal.habitat} 都闭着眼睛睡觉`)
+                // 此刻中的this，就是谁调用它，它就指向谁
+                console.log(`所有的动物都栖息在 ${this.habitat} 都闭着眼睛睡觉`)
+            }
+        }    
+
+        // 借助构造器，简化赋值
+        var a1 = new Animal('旺财',4)
+        a1.name = '来福'
+
+        /**
+         * 没有借助构造器，得一个一个的赋值，麻烦
+        var a1 = new Animal()
+        a1.name = '蓝猫'
+        a1.age = 10
+        **/
+        a1.eat('骨头')
+        console.log("-------------------")
+        // console.log(a1.name)
+        // var a2 = new Animal()
+        // console.log(a2)
+
+        Animal.habitat = '火星'
+        Animal.sleep()
+        // console.log('过了N年之后 我们的栖息地，变成了 ',Animal.habitat)
+    </script>
+</body>
+</html>
